@@ -1,38 +1,544 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+/* general style */
+a {
+  text-decoration: none;
+}
+/* variables  */
+:root {
+  --red-color: #d80032;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* first page style choose path */
+.choosePath {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* .choosePath-page{
+  background-image: url("./images/bgimg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+} */
+.content {
+  background-color: #fff;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  /* border: 3px solid #888; */
+  box-shadow: 0 13px 25px rgba(0, 0, 0, 0.1), 0 -2px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  /* padding: 37px 9px; */
+  padding: 0;
+}
+@media screen and (max-width: 700px) {
+  .choosePath .content {
+    height: 100%;
+    margin-top: 0!important;
+  }
+}
+.choosePath .content .logo {
+  width: 300px;
+}
+.choosePath .content .waves {
+  width: 100%;
+  border-radius: 10px;
+}
+.choosePath .content .links {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 20px;
+}
+.choosePath .content .links a {
+  background-color: var(--red-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid var(--red-color);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 15px;
+  border: 3px solid var(--red-color);
+}
+.choosePath .content .links a:hover {
+  background-color: white;
+  color: var(--red-color);
+}
+.choosePath .content .links .login-btn {
+  background-color: white;
+  color: var(--red-color);
+  border: 3px solid var(--red-color);
+}
+.choosePath .content .links .login-btn:hover {
+  background-color: var(--red-color);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+/* user register */
+.userRegister {
+  padding: 30px;
+}
+.userRegister header {
+  font-size: 25px;
+}
+.userRegister form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+.userRegister .next-btn {
+  background-color: var(--red-color);
+  color: white;
+  border: 0;
+  padding: 10px 20px;
+  border-radius: 30px;
+  outline: 0;
+  box-shadow: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.userRegister a {
+  color: var(--red-color);
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.donate_time input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1.5px solid #888;
+  outline: none;
+  margin-left: 5px;
+}
+.userRegister textarea {
+  border-radius: 5px;
+  outline: 0;
+  border: 1.5px solid #888;
+  padding: 10px;
+}
+.userRegister .login-btn {
+  width: 60%;
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.login {
+  width: 400px;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login .logo {
+  width: 222px;
+  margin: 0;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* hosinfo page */
+@media screen and (max-width: 800px) {
+  .content {
+    margin-top: 85px;
   }
-  to {
-    transform: rotate(360deg);
+  .hosinfo_row .row div,
+  .hosinfo_row input {
+    width: 100% !important;
+  }
+}
+
+/* navbar */
+.navbar {
+  background: #f6f0ee !important;
+  box-shadow: 0px -2px 3px -6px rgba(0, 0, 0, 0.2),
+    0px 2px 6px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
+  color: #490008 !important;
+}
+.navbar .sm-logo {
+  height: 41px;
+  object-fit: contain;
+}
+.navbar .lg-logo {
+  width: 100%;
+  height: 41px;
+  object-fit: contain;
+}
+.navbar li p {
+  color: #490008 !important;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+  border-radius: 7px;
+}
+.navbar li:hover {
+  background: none;
+}
+.navbar li p:hover {
+  background-color: #49000918;
+}
+.navbar li p svg {
+  margin-right: 6px;
+}
+/* swiper */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  border-radius: 20px;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper-slide .img2{
+  background: #7aa9f2;
+}
+.swiper-slide .img3{
+  background: #f6d5e5;
+}
+
+
+/* need blood page */
+.blood-type{
+  background-image: url("./images/Rectangle\ 35.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  border-radius: 20px;
+  color: white;
+  padding: 16px;
+  height: 233px;
+  position: relative;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 1000px) {
+  .blood-type{
+    position: sticky;
+    top: 6%;
+  }
+  
+}
+.blood-type .elipse1{
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+}
+.blood-type .elipse2{
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  z-index: 10;
+}
+.blood-type .elipse3{
+  position: absolute;
+  right: 30%;
+  bottom: 10%;
+}
+.blood-type .input{
+  position: relative;
+  z-index: 100;
+}
+.blood-type .input select{
+    width: 100%;
+    height: 46px;
+    padding: 6px;
+    border: 0;
+    border-radius: 9px;
+    outline: 0;
+    font-size: 17px;
+}
+.blood-type .input .input-blood{
+  border-radius: 8px 10px 0 0px !important;
+  /* color: #fff !important; */
+  background: #fff;
+}
+.blood-type .check-div{
+  display: flex;
+  align-items: center;
+
+}
+.blood-type .check-div label{
+  font-size: 18px;
+  margin-left: 4px;
+  
+}
+@media screen and (min-width: 800px) {  
+  .result-card{
+   border: 2px solid #9d9d9d;
+   border-radius: 8px;
+   padding: 0 11px;
+   margin-bottom: 20px;
+   min-width: 375px;
+   /* margin: 0 10px; */
+   margin-left: 3px;
+   margin-right: 10px;
+   max-height: 243px;
+ }
+}
+.result-card{
+  border: 2px solid #9d9d9d;
+  border-radius: 8px;
+  padding: 0 11px;
+  margin-bottom: 20px;
+  /* margin: 0 10px; */
+  margin-left: 3px;
+  margin-right: 10px;
+
+}
+.result-card .blood-name{
+  position: relative;
+  background: #ffb7c769;
+  color: #e8315b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 95px;
+  margin: 13px;
+  border-radius: 13px;
+}
+.result-card .blood-name img{
+  position: absolute;
+  top: -5px;
+  left: -4px;
+  width: 18px;
+}
+.result-card .blood-name h2{
+  margin-top: 22px;
+  font-size: 33px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0;
+}
+.result-card .blood-name p{
+  font-size: 12px;
+  color: #888;
+}
+.result-card .donor-data{
+  margin-top: 11px;
+}
+.result-card .donor-data h1{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 13px;
+}
+.result-card .donor-data p{
+  font-size: 17px;
+    color: #777;
+    display: flex;
+    margin-bottom: 5px;
+}
+.result-card .donor-data p svg{
+  width: 20px;
+  margin-right: 4px;
+
+}
+.result-card .request-btn{
+  text-align: right;
+  border-top: 1.8px solid #888;
+  margin-top: 33px;
+  display: flex;
+  justify-content: end;
+
+}
+.result-card .request-btn button{
+  border: 0;
+  background: 0;
+  text-align: right;
+  padding: 8px;
+  color: #666;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.result-card .request-btn button svg{
+  width: 21px;
+    margin-left: 5px;
+}
+
+/* profile page */
+.profile_page{
+  /* height: 92vh !important; */
+}
+.profile_page .profile{
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 3px solid #888; */
+  box-shadow: 0 13px 25px rgba(0, 0, 0, 0.1), 0 -2px 15px rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  /* padding: 37px 9px; */
+  padding: 20px;
+}
+
+
+/* requests page */
+.header-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0e7e0;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 15px;
+}
+@media screen and (max-width: 800px) {
+.header-section{
+    flex-direction: column;
+    width: 90%;
+    font-size: 14px !important;
+  }
+.header-section img {
+    width: 100% !important;
+  }
+  
+}
+ .header-section img{
+  width: 50%;
+}
+ .header-section .text p{
+  margin-top: 10px;
+  /* font-size:20px; */
+  color: #666;
+}
+@media screen and (min-width: 900px) {
+ .header-section .text p{
+    font-size: 19px !important;
+  }
+}
+.requests .links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 21px;
+    margin-bottom: 20px;
+
+}
+.requests .links .active {
+  background-color: var(--red-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  outline: 0;
+  box-shadow: 0;
+  text-align: center;
+  border: 1px solid var(--red-color);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 3px solid var(--red-color);
+  width: 210px;
+  padding: 11px 7px;
+
+}
+
+.requests .links .login-btn {
+  background-color: white;
+  color: var(--red-color);
+  border: 3px solid var(--red-color);
+  width: 210px;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 11px 7px;
+  outline: 0;
+  box-shadow: 0;
+  border-radius: 10px;
+}
+
+.requests .request-btn{
+  justify-content: space-around;
+}
+.requests .request-btn button{
+  width: 100% !important;
+}
+
+.requests .request-btn .first-btn{
+  border-right: 2px solid #7777 !important;
+}
+.requests .request-btn .accept-btn svg{
+  color:green;
+}
+.requests .request-btn .reject-btn svg{
+  color:red;
+}
+.requests .result-card .blood-name h2 {
+  margin-top: 0 !important;
+}
+.requests .reject-icon{
+  color: red !important;
+  margin-right: 5px;
+}
+.requests .pending-icon{
+  color: gray !important;
+  margin-right: 5px;
+}
+.requests .done-btn{
+  color: green !important;
+}
+
+/* donate page */
+.donate img{
+  margin-top: 34px;
+  border-radius: 20px;
+
+}
+.donate h3{
+     margin-top: 31px;
+    margin-bottom: 11px;
+    font-size: 19px;
+    margin-left: 2px;
+    color: #7e7d7d;
+}
+.donate .donate-btn{
+  background-color: var(--red-color);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-align: center;
+  border: 1px solid var(--red-color);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 3px solid var(--red-color);
+}
+
+@media screen and (max-width: 600px) {
+  .donate .donate-btn{
+    margin-top: 20px;
   }
 }
