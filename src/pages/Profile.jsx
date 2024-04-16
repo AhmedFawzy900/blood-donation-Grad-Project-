@@ -9,6 +9,7 @@ import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import PublishedWithChangesIcon from "@mui/icons-material/PublishedWithChanges";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import {
   Alert,
   IconButton,
@@ -46,7 +47,7 @@ export default function Profile() {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState("");
   const [hospitals, setHospitals] = useState([]);
-
+  const navigate = useNavigate();
   React.useEffect(() => {
     getAllUsers();
     getAllHospitals();
@@ -426,10 +427,13 @@ export default function Profile() {
                 </>
               )}
 
-              <div class="field button">
+              <div class="field button d-flex justify-content-between align-items-center">
                 <button type="submit" className="next-btn">
                   Save Changes <PublishedWithChangesIcon />
                 </button>
+                <div className="medical_info-btn" onClick={()=>{navigate('/updateMedicalInfo')}}>
+                  Medical Info <ArrowForwardIcon />
+                </div>
               </div>
             </form>
           </section>

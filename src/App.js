@@ -13,6 +13,7 @@ import RequestBlood from './pages/RequestBlood';
 import Profile from './pages/Profile';
 import Requests from './pages/Requests';
 import Donate from './pages/Donate';
+import UpdateMedicalInfo from './pages/UpdateMedicalInfo';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/profile' element={<Profile/>} />
         <Route path='/requests' element={<Requests/>} />
         <Route path='/donate' element={<Donate/>} />
+        <Route path='/updateMedicalInfo' element={<UpdateMedicalInfo/>} />
       </Routes>
     </div>
   );

@@ -10,22 +10,14 @@ import "react-toastify/dist/ReactToastify.css";
 // Import Swiper styles
 import "swiper/css";
 import { Bounce, Slide, ToastContainer, Zoom, toast } from "react-toastify";
+import WelcomeSection from "../components/WelcomeSection";
+import WhyToDonateSection from "../components/WhyToDonateSection";
+import OurStatesSection from "../components/OurStatesSection";
 
 export default function Home() {
   const navigate = useNavigate();
   useEffect(() => {
     navigate();
-    toast.success(`welcom ${currentUser.name}`, {
-        position: "top-right",
-        autoClose: 2500,
-        hideProgressBar: true,
-        closeOnClick: false,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-        transition: Zoom,
-    });
   }, []);
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const emailAddress = currentUser.email;
@@ -42,22 +34,10 @@ export default function Home() {
   };
   return (
     <div>
-      <ToastContainer
-        position="top-right"
-        autoClose={2200}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
       <Navbar />
-      <Slider />
-      <h1>Home</h1>
-      <h2>welcom {currentUser.name}</h2>
+      <WelcomeSection />
+      <WhyToDonateSection />
+      <OurStatesSection />
     </div>
   );
 }

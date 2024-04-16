@@ -81,7 +81,7 @@ const RecivedRequests = ({
             request.sender_type == "hospital" ||
             request.sender_type == "blood_bank"
         )
-        .filter((request) => request.status == "pending")
+        .filter((request) => request.status == "pending" && request.status == "rejected")
         .map((request, index) => (
           <>
             {AllMergedHospitals.filter(

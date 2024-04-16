@@ -117,8 +117,7 @@ function Navbar() {
                   textAlign="center"
                   onClick={(e) => navigate("/donate")}
                 >
-                  <BloodtypeIcon />
-                  Donate
+                  <BloodtypeIcon /> Donate
                 </Typography>
               </MenuItem>
               )}

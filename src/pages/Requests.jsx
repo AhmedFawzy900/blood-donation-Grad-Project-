@@ -84,6 +84,9 @@ const Requests = () => {
                 ).length
               : donateRequests.filter(
                   (request) => request.to_id == currentUser.id
+                ).filter(
+                  (request) =>
+                    request.status !== "done" && request.status !== "rejected"
                 ).length}
             )
           </button>
