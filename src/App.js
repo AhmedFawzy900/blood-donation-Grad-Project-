@@ -14,6 +14,7 @@ import Profile from './pages/Profile';
 import Requests from './pages/Requests';
 import Donate from './pages/Donate';
 import UpdateMedicalInfo from './pages/UpdateMedicalInfo';
+import CarHomePage from './pages/car/CarHomePage';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
         <Route path='/requests' element={<Requests/>} />
         <Route path='/donate' element={<Donate/>} />
         <Route path='/updateMedicalInfo' element={<UpdateMedicalInfo/>} />
+
+        {/* car routes */}
+        <Route path="/car/home" element={<CarHomePage/>} />
       </Routes>
     </div>
   );

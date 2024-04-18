@@ -143,10 +143,12 @@ const DonateRequests = ({
         <>
           {donateRequests
             .filter((request) => request.donor_type == "user")
+            .filter((request) => request.from_id == currentUser.id)
             .filter((request) => request.status !== "done")
             .map((request, index) => (
               <>
-                {AllMergedHospitals.filter(
+                {AllMergedHospitals
+                .filter(
                   (hospital) => hospital.hospital_id == request.to_id
                 ).map((hos, index) => (
                   <div

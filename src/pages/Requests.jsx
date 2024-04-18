@@ -81,6 +81,9 @@ const Requests = () => {
             {currentUser.type === "user"
               ? donateRequests.filter(
                   (request) => request.from_id == currentUser.id
+                ).filter(
+                  (request) =>
+                    request.status !== "done"
                 ).length
               : donateRequests.filter(
                   (request) => request.to_id == currentUser.id

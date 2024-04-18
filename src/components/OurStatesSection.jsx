@@ -24,6 +24,7 @@ const OurStatesSection = () => {
         fetch('http://localhost:8000/api/get-hospitals-personal-info')
         .then(res=>res.json())
         .then(res=>setBanks(res.filter(item=>item.type == "blood_bank").length));
+
         // get the num of successful donations = num of donate requests + num of blood reqests 
         fetch('http://localhost:8000/api/get-requests')
         .then(res=>res.json())
