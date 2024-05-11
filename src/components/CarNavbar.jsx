@@ -5,22 +5,22 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function CarNavbar() {
   return (
-    <div class="header" id="header">
-    <div class="container">
-        <a href="#" class="logo">MiditTour</a>
-        <ul class="main-nav">
+    <div className ="header" id="header">
+    <div className="container">
+        <a href="#" className="logo">MediTour</a>
+        <ul className="main-nav">
             <li>
-                <a href="#about" class="about">About</a>
+                <a href="#about" className="about">About</a>
             </li>
             <li>
-                <a href="#gallary" class="gallary">Gallary</a>
+                <a href="#gallary" className="gallary">Gallary</a>
             </li>
             <li>
-                <a href="#services" class="services">Services</a>
+                <a href="#services" className="services">Services</a>
             </li>
            
             <li>
-                <a href="#" class="other-links">Make a Request</a>
+                <a href="#contact-sec" className="other-links">Contact Us</a>
             </li>
             
         </ul>

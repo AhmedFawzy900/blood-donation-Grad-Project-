@@ -11,37 +11,37 @@ import gal7 from '../images/gal7.jpg';
 const CarGallarySec = () => {
 
     return (
-        <div class="gallary" id="gallary">
+        <div className="gallary" id="gallary">
 
-        <div class="main-title"><h1>Gallary</h1></div>
-        <div class="container">
-            <div class="box">
-                <div class="image">
+        <div className="main-title"><h1>Gallary</h1></div>
+        <div className="container">
+            <div className="box">
+                <div className="image">
                     <img src={amb4} alt=""/>
                 </div>
             </div>
-            <div class="box">
-                <div class="image">
+            <div className="box">
+                <div className="image">
                     <img src={gal1} alt=""/>
                 </div>
             </div>
-            <div class="box">
-                <div class="image">
+            <div className="box">
+                <div className="image">
                     <img src={gal2} alt="" />
                 </div>
             </div>
-            <div class="box">
-                <div class="image">
+            <div className="box">
+                <div className="image">
                     <img src={gal3} alt="" />
                 </div>
             </div>
-            <div class="box">
-                <div class="image">
+            <div className="box">
+                <div className="image">
                     <img src={gal4} alt="" />
                 </div>
             </div>
-            <div class="box">
-                <div class="image">
+            <div className="box">
+                <div className="image">
                     <img src={gal5} alt="" />
                 </div>
             </div>

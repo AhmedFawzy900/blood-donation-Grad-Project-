@@ -21,18 +21,18 @@ const CarAboutSec = () => {
     },{
       title:"Your Partner in Health",
       img:amb5,
-      desc:"At MiditTour , we're your partner in maintaining your health routine. Whether it's a hospital, doctor's office, or therapy session, we're here to get you there with care.we're more than just transportation;",
+      desc:"At MediTour , we're your partner in maintaining your health routine. Whether it's a hospital, doctor's office, or therapy session, we're here to get you there with care.we're more than just transportation;",
     }
   ];
   return (
     <div className="about" id="about">
       <div className="main-title">
-        <h1>About MediRide</h1>
+        <h1>About MediTour</h1>
       </div>
       <div className="container">
-        {data.map((box) => {
+        {data.map((box,index) => {
           return (
-            <div className="box">
+            <div className="box" key={index}>
               <img src={box.img} alt="" />
               <div className="text-content">
                 <h4>{box.title}</h4>

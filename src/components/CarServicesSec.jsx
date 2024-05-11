@@ -29,17 +29,17 @@ const CarServicesSec = () => {
     ]
   return (
     <div className="services" id="services">
-        <div class="dots dots-up"></div>
-        <div class="dots dots-down"></div>
-      <div class="main-title">
+        <div className="dots dots-up"></div>
+        <div className="dots dots-down"></div>
+      <div className="main-title">
         <h1>Our Services</h1>
       </div>
-      <div class="container">
-        {data.map((box) => (  
-            <div class="box">
+      <div className="container">
+        {data.map((box,index) => (  
+            <div className="box" key={index}>
             <img src={box.img} alt="" />
             <h3>{box.title}</h3>
-            <div class="info">
+            <div className="info">
                 <a href="#">Details</a>
             </div>
             </div>

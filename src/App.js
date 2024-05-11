@@ -15,6 +15,9 @@ import Requests from './pages/Requests';
 import Donate from './pages/Donate';
 import UpdateMedicalInfo from './pages/UpdateMedicalInfo';
 import CarHomePage from './pages/car/CarHomePage';
+import CarDashboard from './pages/car/CarDashboard';
+import CarDashboardRequests from './pages/car/CarDashboardRequests';
+import RequestDetail from './pages/car/RequestDetail';
 
 function App() {
   return (
@@ -35,6 +38,9 @@ function App() {
 
         {/* car routes */}
         <Route path="/car/home" element={<CarHomePage/>} />
+        <Route path="/car/dashboard" element={<CarDashboard/>} />
+        <Route path="/car/dashboard/requests" element={<CarDashboardRequests />} />
+        <Route path="/car/dashboard/requests/:id" element={<RequestDetail />} />
       </Routes>
     </div>
   );

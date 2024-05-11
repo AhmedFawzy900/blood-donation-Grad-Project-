@@ -1,56 +1,56 @@
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import InstagramIcon from '@mui/icons-material/Instagram';
-import LanguageIcon from '@mui/icons-material/Language';
+import XIcon from '@mui/icons-material/X';
 const CarFooter = () => {
   return (
-    <footer class="footer">
-      <div class="waves">
-        <div class="wave" id="wave1"></div>
-        <div class="wave" id="wave2"></div>
-        <div class="wave" id="wave3"></div>
-        <div class="wave" id="wave4"></div>
+    <footer className="footer">
+      <div className="waves">
+        <div className="wave" id="wave1"></div>
+        <div className="wave" id="wave2"></div>
+        <div className="wave" id="wave3"></div>
+        <div className="wave" id="wave4"></div>
       </div>
-      <ul class="social-icon">
-        <li class="social-icon__item">
-          <a class="social-icon__link" href="#">
+      <ul className="social-icon">
+        <li className="social-icon__item">
+          <a className="social-icon__link" href="#">
             <FacebookIcon />
           </a>
         </li>
-        <li class="social-icon__item">
-          <a class="social-icon__link" href="#">
+        <li className="social-icon__item">
+          <a className="social-icon__link" href="#">
             <LinkedInIcon />
           </a>
         </li>
-        <li class="social-icon__item">
-          <a class="social-icon__link" href="#">
+        <li className="social-icon__item">
+          <a className="social-icon__link" href="#">
             <InstagramIcon />
           </a>
         </li>
-        <li class="social-icon__item">
-          <a class="social-icon__link" href="#">
-            <LanguageIcon />
+        <li className="social-icon__item">
+          <a className="social-icon__link" href="#">
+            <XIcon />
           </a>
         </li>
       </ul>
-      <ul class="menu">
-        <li class="menu__item">
-          <a class="menu__link" href="#about">
+      <ul className="menu">
+        <li className="menu__item">
+          <a className="menu__link" href="#about">
             About
           </a>
         </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#services">
+        <li className="menu__item">
+          <a className="menu__link" href="#services">
             Services
           </a>
         </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#gallery">
+        <li className="menu__item">
+          <a className="menu__link" href="#gallery">
             Gallary
           </a>
         </li>
-        <li class="menu__item">
-          <a class="menu__link" href="#">
+        <li className="menu__item">
+          <a className="menu__link" href="#">
             Contact Us
           </a>
         </li>
