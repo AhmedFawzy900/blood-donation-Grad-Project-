@@ -22,6 +22,10 @@ function CarNavbar() {
             <li>
                 <a href="#contact-sec" className="other-links">Contact Us</a>
             </li>
+
+            <li>
+                <a href="/car/dashboard/login" target='_blank' className="Dashboard">Dashboard</a>
+            </li>
             
         </ul>
     </div>

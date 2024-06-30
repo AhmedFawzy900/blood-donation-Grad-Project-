@@ -177,7 +177,7 @@ export default function MedicalInfo() {
     // });
   };
   return (
-    <div className="body choosePath">
+    <div className="body choosePath userMedicalInfo">
       <div class="wrapper userRegister content">
         <section class="form signup">
           <header>Medical Information</header>

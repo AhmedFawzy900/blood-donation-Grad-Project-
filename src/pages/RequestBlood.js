@@ -4,7 +4,13 @@ import elipse1 from "../images/Ellipse 6.png";
 import elipse2 from "../images/Ellipse 7-1.png";
 import elipse3 from "../images/Ellipse 7.png";
 import bld from "../images/Group.png";
-import { FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
 import SocialDistanceIcon from "@mui/icons-material/SocialDistance";
@@ -24,7 +30,7 @@ export default function RequestBlood() {
   const [allHospitalsDistances, setAllHospitalssDistances] = useState([]);
   const [bloodType, setBloodType] = useState("");
   const [donorTypes, setDonorTypes] = useState([]);
-  const [xdistance, setXdistance] = useState(0);
+  const [hospitalAddress, setHospitalAddress] = useState("");
   // Define a function to get the user's location using Geolocation API
   const getUserLocation = () => {
     // Check if geolocation is supported
@@ -56,7 +62,7 @@ export default function RequestBlood() {
     getAllUsersLocations();
     getUserLocation();
     getAllHospitalsLocations();
-  }, [bloodType,donorTypes]);
+  }, [bloodType, donorTypes]);
 
   // Function to calc the distance between two locations
   const calcDistance = (location1, location2_latitude, location2_longitude) => {
@@ -163,50 +169,63 @@ export default function RequestBlood() {
     }
   };
 
-  const makeRequest = ($to_id, $from_id, $distance, $donor_type , $bloodType) => {
+  const makeRequest = (
+    $to_id,
+    $from_id,
+    $distance,
+    $donor_type,
+    $bloodType,
+    hospital_address,
+
+  ) => {
     const data = {
       to_id: $to_id,
       from_id: $from_id,
-      status:"pending",
+      status: "pending",
       distance: $distance,
       donor_type: $donor_type,
-      sender_type:currentUser.type,
-      blood_type: $bloodType
+      sender_type: currentUser.type,
+      blood_type: $bloodType,
+      hospital_address: hospital_address,
     };
-    fetch("http://localhost:8000/api/request-blood", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        toast.success(`Request Sent Successfully`, {
-          position: "top-right",
-          autoClose: 2500,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          transition: Slide,
-        });
+    if (hospital_address === "") {
+      toast.error(`Please Enter Hospital Address and Name`, {})
+    }else{
+      fetch("http://localhost:8000/api/request-blood", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
       })
-      .catch((error) => {
-        toast.error(`Error Sending Request`, {
-          position: "top-right",
-          autoClose: 2500,
-          hideProgressBar: false,
-          closeOnClick: false,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-          transition: Slide,
+        .then((response) => response.json())
+        .then((data) => {
+          toast.success(`Request Sent Successfully`, {
+            position: "top-right",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Slide,
+          });
+        })
+        .catch((error) => {
+          toast.error(`Error Sending Request`, {
+            position: "top-right",
+            autoClose: 2500,
+            hideProgressBar: false,
+            closeOnClick: false,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+            transition: Slide,
+          });
         });
-      });
+    }
   };
 
   return (
@@ -230,27 +249,17 @@ export default function RequestBlood() {
             <img src={elipse1} alt="blood type" className="elipse1" />
             <img src={elipse2} alt="blood type" className="elipse2" />
             <img src={elipse3} alt="blood type" className="elipse3" />
+
             <div className="field input my-4">
-              {/* <label htmlFor="blood_type">Blood type:</label> */}
-              {/* <select
-                id="blood_type"
-                value={bloodType}
-                onChange={(e) => setBloodType(e.target.value)}
-                name="blood_type"
-                required
-              >
-                <option value="" selected disabled>
-                  Select blood type
-                </option>
-                <option value="A">A</option>
-                <option value="Ap">A+</option>
-                <option value="B">B</option>
-                <option value="Bp">B+</option>
-                <option value="AB">AB</option>
-                <option value="ABp">AB+</option>
-                <option value="O">O</option>
-                <option value="Op">O+</option>
-              </select> */}
+              <TextField
+                id="filled-basic"
+                label="Enter the hospital or blood bank address and Name"
+                className="patient-address"
+                variant="filled"
+                onChange={(e) => setHospitalAddress(e.target.value)}
+              />
+            </div>
+            <div className="field input my-4">
               <FormControl variant="filled" fullWidth>
                 <InputLabel id="demo-simple-select-label">
                   Blood Type
@@ -320,17 +329,6 @@ export default function RequestBlood() {
               </div>
             </div>
           </div>
-          {/* enter the distance you want */}
-          {/* <div className="my-4">
-            <input
-              type="number"
-              id="distance"
-              name="distance"
-              value={xdistance}
-              onChange={(e) => setXdistance(e.target.value)}
-            />
-            <label for="distance">km</label>
-          </div> */}
 
           <div className="results col-lg-8">
             <div className="row justify-content-evenly align-items-center">
@@ -388,7 +386,8 @@ export default function RequestBlood() {
                               currentUser.id,
                               location.distance,
                               location.type,
-                              bloodType
+                              bloodType,
+                              hospitalAddress
                             )
                           }
                         >
@@ -457,7 +456,8 @@ export default function RequestBlood() {
                               currentUser.id,
                               location.distance,
                               location.type,
-                              bloodType
+                              bloodType,
+                              hospitalAddress
                             )
                           }
                         >
@@ -524,7 +524,8 @@ export default function RequestBlood() {
                               currentUser.id,
                               location.distance,
                               location.type,
-                              bloodType
+                              bloodType,
+                              hospitalAddress
                             )
                           }
                         >

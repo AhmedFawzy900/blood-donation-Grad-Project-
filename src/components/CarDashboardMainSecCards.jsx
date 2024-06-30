@@ -5,9 +5,10 @@ import moneyImg from "../images/money.png";
 import DshCard from "./DshCard";
 
 const CarDashboardMainSecCards = () => {
+    const adminData = JSON.parse(localStorage.getItem('Admin'));
     return(
         <div className="dashboard-cards">
-            <h2>Welcome Back ,Ahmed</h2>
+            <h2>Welcome Back ,{adminData.name}</h2>
             <div className="cards">
                 {/* card1 */}
                 <DshCard img={totalImg} title="Total Booking" num="50"/>

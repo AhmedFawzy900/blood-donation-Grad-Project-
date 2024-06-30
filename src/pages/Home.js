@@ -13,14 +13,24 @@ import { Bounce, Slide, ToastContainer, Zoom, toast } from "react-toastify";
 import WelcomeSection from "../components/WelcomeSection";
 import WhyToDonateSection from "../components/WhyToDonateSection";
 import OurStatesSection from "../components/OurStatesSection";
+import SpinnerBlood from "../components/SpinnerBlood";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     navigate();
+    setTimeout(() => {
+      setLoading(false);
+    }, 1600);
   }, []);
   const currentUser = JSON.parse(localStorage.getItem("currentUser"));
   const emailAddress = currentUser.email;
+  if (loading) {
+    return (<SpinnerBlood />);
+  }
+
   if (!currentUser) {
     navigate("/");
   }
@@ -32,12 +42,15 @@ export default function Home() {
   const handleBloodRequest = () => {
     navigate("/bloodRequst");
   };
+
+
   return (
     <div>
       <Navbar />
       <WelcomeSection />
       <WhyToDonateSection />
       <OurStatesSection />
+      <Footer />
     </div>
   );
 }

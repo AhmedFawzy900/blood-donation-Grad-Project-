@@ -22,6 +22,12 @@ a {
   justify-content: center;
   align-items: center;
 }
+@media screen and (min-width: 900px) {
+  .choosePath-page{
+    height: 100vh;
+  }
+  
+}
 /* .choosePath-page{
   background-image: url("./images/bgimg.jpg");
   background-size: cover;
@@ -48,7 +54,8 @@ a {
   }
 }
 .choosePath .content .logo {
-  width: 300px;
+  width: 251px;
+  margin: 34px 0;
 }
 .choosePath .content .waves {
   width: 100%;
@@ -84,6 +91,10 @@ a {
 .choosePath .content .links .login-btn:hover {
   background-color: var(--red-color);
   color: white;
+}
+
+.userMedicalInfo{
+  height: 111vh !important;
 }
 /* user register */
 .userRegister {
@@ -270,6 +281,13 @@ a {
   position: relative;
   z-index: 100;
 }
+.blood-type .input .patient-address{
+  width: 100%;
+  background: white;
+  border-radius: 9px 9px 0 0;
+}
+
+
 .blood-type .input select{
     width: 100%;
     height: 46px;
@@ -861,5 +879,25 @@ a {
   color:#490008;
 }
 /* end our states  */
+
+/* start footer */
+.blood-footer{
+  position: relative;
+  width: 100%;
+  background: #ffffff;
+  min-height: 100px;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 19px;
+  font-weight: 600;
+  color: #7e4b51;
+}
+.blood-footer p{
+  margin: 0;
+}
+/* end footer */
 /* end home page  */
 

@@ -18,6 +18,7 @@ import CarHomePage from './pages/car/CarHomePage';
 import CarDashboard from './pages/car/CarDashboard';
 import CarDashboardRequests from './pages/car/CarDashboardRequests';
 import RequestDetail from './pages/car/RequestDetail';
+import LoginPage from './pages/car/LoginPage';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/car/dashboard" element={<CarDashboard/>} />
         <Route path="/car/dashboard/requests" element={<CarDashboardRequests />} />
         <Route path="/car/dashboard/requests/:id" element={<RequestDetail />} />
+        <Route path='/car/dashboard/login' element={<LoginPage/>} />
       </Routes>
     </div>
   );

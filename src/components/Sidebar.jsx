@@ -9,6 +9,9 @@ import {
 } from "cdbreact";
 import { NavLink } from "react-router-dom";
 const Sidebar = () => {
+  const logout = () =>{
+    localStorage.removeItem('Admin');
+  }
   return (
     <div
     className="sidebar"
@@ -32,24 +35,9 @@ const Sidebar = () => {
             <NavLink exact to="/car/dashboard/requests" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="table">Requests</CDBSidebarMenuItem>
             </NavLink>
-            {/* <NavLink exact to="/profile" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
-            </NavLink> */}
-            {/* <NavLink exact to="/analytics" activeClassName="activeClicked">
-              <CDBSidebarMenuItem icon="chart-line">
-                Analytics
-              </CDBSidebarMenuItem>
-            </NavLink> */}
-            {/* <NavLink
-              exact
-              to="/hero404"
-              target="_blank"
-              activeClassName="activeClicked"
-            >
-              <CDBSidebarMenuItem icon="exclamation-circle">
-                404 page
-              </CDBSidebarMenuItem>
-            </NavLink> */}
+            <NavLink exact to="/car/dashboard/login" activeClassName="activeClicked">
+              <CDBSidebarMenuItem icon="arrow-circle-left" onclick={()=>logout()}>Logout</CDBSidebarMenuItem>
+            </NavLink>
           </CDBSidebarMenu>
         </CDBSidebarContent>
       </CDBSidebar>

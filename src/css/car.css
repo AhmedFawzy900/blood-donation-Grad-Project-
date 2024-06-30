@@ -1137,3 +1137,43 @@ ul {
 }
 /* end car requests  */
 /*end dashboard */
+
+/* Login page */
+.car-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.car-login .box{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: 0px 0px 7px 0px #b1b1b1;
+  border-radius: 7px;
+  padding: 40px 24px;
+  min-width: 346px;
+  width: 29%;
+}
+.car-login .box .logo{
+    text-align: center;
+    margin: 22px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #1787e0;
+}
+.car-login .box .form form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.car-login .box form .btn{
+  background: #1787e2;
+  color: white;
+}
+.car-login .box p a{
+  color: #1787e0; 
+  font-weight: 600;
+}
+/* end Login page */
